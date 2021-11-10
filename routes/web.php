@@ -55,8 +55,11 @@ Route::get('/', function () {
 //    $allPosts=Post::all();
 //    dd($allPosts);
 
-    $featurePosts=Post::where('is_feature',1)->get();
-    dd($featurePosts);
+//    $featurePosts=Post::where('is_feature',1)->get();
+//    dd($featurePosts);
+
+    $fourthPost=Post::find(4);
+    dd($fourthPost);
 });
 Route::get('posts', [\App\Http\Controllers\PostsController::class, 'index'])->name('posts.index');
 Route::get('post', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
