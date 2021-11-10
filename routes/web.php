@@ -58,8 +58,11 @@ Route::get('/', function () {
 //    $featurePosts=Post::where('is_feature',1)->get();
 //    dd($featurePosts);
 
-    $fourthPost=Post::find(4);
-    dd($fourthPost);
+//    $fourthPost=Post::find(4);
+//    dd($fourthPost);
+
+    $lastPost=Post::orderBy('id', 'DESC')->first();
+    dd($lastPost);
 });
 Route::get('posts', [\App\Http\Controllers\PostsController::class, 'index'])->name('posts.index');
 Route::get('post', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
